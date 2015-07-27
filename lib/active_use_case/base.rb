@@ -18,7 +18,7 @@ module ActiveUseCase
 
 
     def call(*args, &block)
-      self.send(:execute, *args, &block)
+      execute(*args, &block)
       return self
     end
 
