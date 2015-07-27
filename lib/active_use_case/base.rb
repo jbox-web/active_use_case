@@ -13,7 +13,7 @@ module ActiveUseCase
       @errors       = []
 
       # Add method helper
-      self.class.send(:define_method, @object_type) { object }
+      define_singleton_method(@object_type) { object }
     end
 
 
