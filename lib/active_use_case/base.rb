@@ -39,21 +39,36 @@ module ActiveUseCase
 
 
     def message_on_start
-      I18n.t("use_cases.#{@object_type}.#{use_case}.start", @object_type.to_sym => object.to_s)
+      tt('start')
     end
 
 
     def message_on_success
-      I18n.t("use_cases.#{@object_type}.#{use_case}.success", @object_type.to_sym => object.to_s)
+      tt('success')
     end
 
 
     def message_on_errors
-      I18n.t("use_cases.#{@object_type}.#{use_case}.failed", @object_type.to_sym => object.to_s, errors: errors.to_sentence)
+      tt('failed', errors: errors.to_sentence)
     end
 
 
     private
+
+
+      def tt(str, opts = {})
+        t(str, opts.merge(@object_type.to_sym => object.to_s))
+      end
+
+
+      def t(str, opts = {})
+        I18n.t("#{i18n_prefix}.#{str}", opts)
+      end
+
+
+      def i18n_prefix
+        "use_cases.#{@object_type}.#{use_case}"
+      end
 
 
       def error_message(message)
