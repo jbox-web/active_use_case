@@ -1,5 +1,7 @@
 ## ActiveUseCase
 
+[![Code Climate](https://codeclimate.com/github/jbox-web/active_use_case/badges/gpa.svg)](https://codeclimate.com/github/jbox-web/active_use_case)
+
 Make your models acts as UseCase.
 
 ## Copyrights & License
