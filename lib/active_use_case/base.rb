@@ -53,6 +53,11 @@ module ActiveUseCase
     end
 
 
+    def message_on_nil_object
+      tt('errors.nil_object')
+    end
+
+
     private
 
 
