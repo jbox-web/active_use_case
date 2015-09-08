@@ -8,7 +8,9 @@ Make your models acts as UseCase.
 
 ## Installation
 
-    gem 'active_use_case', '~> 1.0.3', git: 'https://github.com/jbox-web/active_use_case.git', tag: '1.0.3'
+```ruby
+gem 'active_use_case', '~> 1.0.3', git: 'https://github.com/jbox-web/active_use_case.git', tag: '1.0.3'
+```
 
 then `bundle install`
 
