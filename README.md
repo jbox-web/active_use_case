@@ -12,7 +12,7 @@ Make your models acts as UseCase.
 gem 'active_use_case', '~> 1.0.3', git: 'https://github.com/jbox-web/active_use_case.git', tag: '1.0.3'
 ```
 
-then `bundle install`
+then `bundle install`.
 
 ## Usage
 
