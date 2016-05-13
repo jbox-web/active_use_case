@@ -18,6 +18,10 @@ then `bundle install`.
 ## Usage
 
 
+## Contributors
+
+A big thank to [them](https://github.com/jbox-web/active_use_case/blob/master/AUTHORS) for their contribution!
+
 ## Contribute
 
 You can contribute to this plugin in many ways such as :
