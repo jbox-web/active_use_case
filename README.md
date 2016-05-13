@@ -2,7 +2,9 @@
 
 [![GitHub license](https://img.shields.io/github/license/jbox-web/active_use_case.svg)](https://github.com/jbox-web/active_use_case/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/jbox-web/active_use_case.svg)](https://github.com/jbox-web/active_use_case/releases/latest)
+[![Build Status](https://travis-ci.org/jbox-web/active_use_case.svg?branch=master)](https://travis-ci.org/jbox-web/active_use_case)
 [![Code Climate](https://codeclimate.com/github/jbox-web/active_use_case/badges/gpa.svg)](https://codeclimate.com/github/jbox-web/active_use_case)
+[![Test Coverage](https://codeclimate.com/github/jbox-web/active_use_case/badges/coverage.svg)](https://codeclimate.com/github/jbox-web/active_use_case/coverage)
 [![Dependency Status](https://gemnasium.com/badges/github.com/jbox-web/active_use_case.svg)](https://gemnasium.com/github.com/jbox-web/active_use_case)
 
 ### Make your models acts as UseCase, easy ;)
