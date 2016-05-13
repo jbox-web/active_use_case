@@ -19,14 +19,19 @@ module ActiveUseCase
     end
 
 
+    def klass
+      @klass ||= klass_path.safe_constantize
+    end
+
+
+    def exists?
+      !klass.nil?
+    end
+
+
     def to_object(object)
-      begin
-        klass = klass_path.constantize
-      rescue NameError => e
-        raise ActiveUseCase::UseCaseClassNotFoundError, e
-      else
-        klass.new(object)
-      end
+      raise ActiveUseCase::Errors::UseCaseClassNotFoundError, klass_path if !exists?
+      klass.new(object)
     end
 
   end
