@@ -5,8 +5,8 @@ module ActiveUseCase
   end
 
   module VERSION
-    MAJOR = 2
-    MINOR = 0
+    MAJOR = 1
+    MINOR = 1
     TINY  = 0
     PRE   = nil
 
