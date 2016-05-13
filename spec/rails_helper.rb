@@ -63,7 +63,16 @@ end
 
 module Comments
   class SendEmail  < ActiveUseCase::Base
-    def execute(email)
+    def execute(email, &block)
+      yield email if block_given?
+    end
+  end
+end
+
+
+module Comments
+  class SendSms  < ActiveUseCase::Base
+    def execute(arg1, arg2, opts = {})
     end
   end
 end

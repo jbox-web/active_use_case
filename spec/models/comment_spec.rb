@@ -132,14 +132,51 @@ describe Comment do
 
     context "when UseCase exist" do
       let(:email) { Email.new }
+
       describe '#send_email!' do
-        it 'should return a UseCase object' do
-          expect_any_instance_of(Comments::SendEmail).to receive(:execute)
-          use_case = subject.send_email!(email)
-          expect(use_case).to be_a Comments::SendEmail
-          expect(use_case.use_case).to eq 'send_email'
-          expect(use_case.to_method).to eq 'send_email!'
-          expect(use_case.object).to eq subject
+        context 'with 1 arg' do
+          it 'should return a UseCase object' do
+            expect_any_instance_of(Comments::SendEmail).to receive(:execute).with(email)
+            use_case = subject.send_email!(email)
+            expect(use_case).to be_a Comments::SendEmail
+            expect(use_case.use_case).to eq 'send_email'
+            expect(use_case.to_method).to eq 'send_email!'
+            expect(use_case.object).to eq subject
+          end
+        end
+
+        context 'with 2 args' do
+          it 'should return a UseCase object' do
+            expect_any_instance_of(Comments::SendSms).to receive(:execute).with(email, email)
+            use_case = subject.send_sms!(email, email)
+            expect(use_case).to be_a Comments::SendSms
+            expect(use_case.use_case).to eq 'send_sms'
+            expect(use_case.to_method).to eq 'send_sms!'
+            expect(use_case.object).to eq subject
+          end
+        end
+
+        context 'with 2 args and a hash of options' do
+          it 'should return a UseCase object' do
+            expect_any_instance_of(Comments::SendSms).to receive(:execute).with(email, email, { force: true })
+            use_case = subject.send_sms!(email, email, force: true)
+            expect(use_case).to be_a Comments::SendSms
+            expect(use_case.use_case).to eq 'send_sms'
+            expect(use_case.to_method).to eq 'send_sms!'
+            expect(use_case.object).to eq subject
+          end
+        end
+
+        context 'with 1 arg and a block' do
+          it 'should yield the block and return a UseCase object' do
+            use_case = subject.send_email!(email) do |arg|
+              expect(arg).to eq(email)
+            end
+            expect(use_case).to be_a Comments::SendEmail
+            expect(use_case.use_case).to eq 'send_email'
+            expect(use_case.to_method).to eq 'send_email!'
+            expect(use_case.object).to eq subject
+          end
         end
       end
     end
