@@ -11,7 +11,11 @@ module ActiveUseCase
       g.helper false
     end
 
-    initializer "include ActiveUseCase into ActiveRecord" do |app|
+    initializer 'active_use_case.set_logger' do |app|
+      ActiveUseCase.logger = Rails.logger
+    end
+
+    initializer 'active_use_case.set_active_record' do |app|
       ActiveRecord::Base.send(:include, ActiveUseCase::Model)
     end
 
