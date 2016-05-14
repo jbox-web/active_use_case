@@ -2,14 +2,14 @@ module ActiveUseCase
   class UseCaseBuilder
 
     attr_reader :method
-    attr_reader :parent_klass
+    attr_reader :namespace
     attr_reader :prefix
 
 
-    def initialize(method, parent_klass = nil, prefix = nil)
-      @method       = method
-      @parent_klass = parent_klass
-      @prefix       = prefix
+    def initialize(method, namespace = nil, prefix = nil)
+      @method    = method
+      @namespace = namespace
+      @prefix    = prefix
     end
 
 
@@ -24,7 +24,7 @@ module ActiveUseCase
 
 
     def klass_path
-      @klass_path ||= [parent_klass, prefix, klass_name].compact.join('::')
+      @klass_path ||= [namespace, prefix, klass_name].compact.join('::')
     end
 
 

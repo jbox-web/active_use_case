@@ -30,7 +30,7 @@ describe Comment do
         expect(use_case).to be_a ActiveUseCase::UseCaseBuilder
         expect(use_case.method).to eq :resync!
         expect(use_case.name).to eq 'resync'
-        expect(use_case.parent_klass).to eq 'Comments'
+        expect(use_case.namespace).to eq 'Comments'
         expect(use_case.prefix).to eq 'Files'
         expect(use_case.klass_name).to eq 'Resync'
         expect(use_case.klass_path).to eq 'Comments::Files::Resync'
@@ -110,7 +110,7 @@ describe Comment do
       expect(use_case).to be_a ActiveUseCase::UseCaseBuilder
       expect(use_case.method).to eq :send_email!
       expect(use_case.name).to eq 'send_email'
-      expect(use_case.parent_klass).to eq 'Comments'
+      expect(use_case.namespace).to eq 'Comments'
       expect(use_case.prefix).to be nil
       expect(use_case.klass_name).to eq 'SendEmail'
       expect(use_case.klass_path).to eq 'Comments::SendEmail'

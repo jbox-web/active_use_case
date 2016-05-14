@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe ActiveUseCase::UseCaseBuilder do
 
-  def build_use_case(name = :resync!, parent_klass = nil, prefix = nil)
-    ActiveUseCase::UseCaseBuilder.new(name, parent_klass, prefix)
+  def build_use_case(name = :resync!, namespace = nil, prefix = nil)
+    ActiveUseCase::UseCaseBuilder.new(name, namespace, prefix)
   end
 
   subject { build_use_case }
@@ -20,16 +20,16 @@ describe ActiveUseCase::UseCaseBuilder do
     end
   end
 
-  describe '#parent_klass' do
-    context 'with no parent_klass' do
+  describe '#namespace' do
+    context 'with no namespace' do
       it 'should return the UseCase namespace' do
-        expect(subject.parent_klass).to be nil
+        expect(subject.namespace).to be nil
       end
     end
-    context 'with parent_klass' do
+    context 'with namespace' do
       it 'should return the UseCase namespace' do
         subject = build_use_case(nil, 'Comments')
-        expect(subject.parent_klass).to eq 'Comments'
+        expect(subject.namespace).to eq 'Comments'
       end
     end
   end
