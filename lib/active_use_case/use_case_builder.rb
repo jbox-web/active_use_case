@@ -1,5 +1,5 @@
 module ActiveUseCase
-  class UseCase
+  class UseCaseBuilder
 
     attr_reader :method
     attr_reader :name

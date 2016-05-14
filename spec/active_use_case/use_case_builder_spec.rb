@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe ActiveUseCase::UseCase do
+describe ActiveUseCase::UseCaseBuilder do
 
   def build_use_case(name = :resync!, parent_klass = nil, prefix = nil)
-    ActiveUseCase::UseCase.new(name, parent_klass, prefix)
+    ActiveUseCase::UseCaseBuilder.new(name, parent_klass, prefix)
   end
 
   subject { build_use_case }

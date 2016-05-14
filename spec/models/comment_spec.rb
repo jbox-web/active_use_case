@@ -27,7 +27,7 @@ describe Comment do
     context 'with prefix option' do
       it 'should return a prefixed UseCase klass' do
         use_case = Comment.active_use_cases[:resync!]
-        expect(use_case).to be_a ActiveUseCase::UseCase
+        expect(use_case).to be_a ActiveUseCase::UseCaseBuilder
         expect(use_case.method).to eq :resync!
         expect(use_case.name).to eq 'resync'
         expect(use_case.parent_klass).to eq 'Comments'
@@ -43,9 +43,9 @@ describe Comment do
   describe '.active_use_cases' do
     it 'should return a hash of UseCases' do
       expect(Comment.active_use_cases).to be_a Hash
-      expect(Comment.active_use_cases[:send_email!]).to be_a ActiveUseCase::UseCase
-      expect(Comment.active_use_cases[:generate_pdf!]).to be_a ActiveUseCase::UseCase
-      expect(Comment.active_use_cases[:resync!]).to be_a ActiveUseCase::UseCase
+      expect(Comment.active_use_cases[:send_email!]).to be_a ActiveUseCase::UseCaseBuilder
+      expect(Comment.active_use_cases[:generate_pdf!]).to be_a ActiveUseCase::UseCaseBuilder
+      expect(Comment.active_use_cases[:resync!]).to be_a ActiveUseCase::UseCaseBuilder
     end
   end
 
@@ -65,13 +65,13 @@ describe Comment do
 
     context 'when UseCase klass exist' do
       it 'should accept strings and symbols and return UseCase' do
-        expect(Comment.find_active_use_case('send_email!')).to be_a ActiveUseCase::UseCase
-        expect(Comment.find_active_use_case(:send_email!)).to be_a ActiveUseCase::UseCase
+        expect(Comment.find_active_use_case('send_email!')).to be_a ActiveUseCase::UseCaseBuilder
+        expect(Comment.find_active_use_case(:send_email!)).to be_a ActiveUseCase::UseCaseBuilder
       end
 
       it 'should accept banged and not banged methods and return UseCase' do
-        expect(Comment.find_active_use_case(:send_email)).to be_a ActiveUseCase::UseCase
-        expect(Comment.find_active_use_case(:send_email!)).to be_a ActiveUseCase::UseCase
+        expect(Comment.find_active_use_case(:send_email)).to be_a ActiveUseCase::UseCaseBuilder
+        expect(Comment.find_active_use_case(:send_email!)).to be_a ActiveUseCase::UseCaseBuilder
       end
     end
   end
@@ -107,7 +107,7 @@ describe Comment do
   describe '#build_send_email_use_case' do
     it 'should return a new use case objec ready to be run' do
       use_case = subject.build_send_email_use_case
-      expect(use_case).to be_a ActiveUseCase::UseCase
+      expect(use_case).to be_a ActiveUseCase::UseCaseBuilder
       expect(use_case.method).to eq :send_email!
       expect(use_case.name).to eq 'send_email'
       expect(use_case.parent_klass).to eq 'Comments'
@@ -119,7 +119,7 @@ describe Comment do
   end
 
 
-  describe '#use_case_method' do
+  describe '#use_case_methods' do
 
     context "when UseCase don't exist" do
       let(:email) { Email.new }

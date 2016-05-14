@@ -37,10 +37,10 @@ module ActiveUseCase
           def add_use_case(use_case, parent_klass, prefix)
             build_method = "build_#{use_case}_use_case".to_sym
             exec_method  = "#{use_case}!".to_sym
-            self.active_use_cases[exec_method] = UseCase.new(exec_method, parent_klass, prefix)
+            self.active_use_cases[exec_method] = UseCaseBuilder.new(exec_method, parent_klass, prefix)
 
             define_method build_method do
-              UseCase.new(exec_method, parent_klass, prefix)
+              UseCaseBuilder.new(exec_method, parent_klass, prefix)
             end
 
             define_method exec_method do |*args, &block|
