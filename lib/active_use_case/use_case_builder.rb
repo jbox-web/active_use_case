@@ -2,20 +2,29 @@ module ActiveUseCase
   class UseCaseBuilder
 
     attr_reader :method
-    attr_reader :name
     attr_reader :parent_klass
     attr_reader :prefix
-    attr_reader :klass_name
-    attr_reader :klass_path
 
 
-    def initialize(name, parent_klass = nil, prefix = nil)
-      @method       = name
-      @name         = name.to_s.gsub('!', '')
+    def initialize(method, parent_klass = nil, prefix = nil)
+      @method       = method
       @parent_klass = parent_klass
       @prefix       = prefix
-      @klass_name   = @name.camelize
-      @klass_path   = [@parent_klass, @prefix, @klass_name].compact.join('::')
+    end
+
+
+    def name
+      @name ||= method.to_s.gsub('!', '')
+    end
+
+
+    def klass_name
+      @klass_name ||= name.camelize
+    end
+
+
+    def klass_path
+      @klass_path ||= [parent_klass, prefix, klass_name].compact.join('::')
     end
 
 
