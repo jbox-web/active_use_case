@@ -9,8 +9,8 @@ module ActiveUseCase
 
         def add_use_cases(use_cases = [], opts = {})
           self.active_use_cases = {} if self.active_use_cases.nil?
-          parent_klass = opts.delete(:parent_klass){ '' }
-          prefix       = opts.delete(:prefix){ '' }
+          parent_klass = opts.delete(:parent_klass){ nil }
+          prefix       = opts.delete(:prefix){ nil }
 
           use_cases.each do |use_case|
             add_use_case(use_case, parent_klass, prefix)
@@ -37,7 +37,6 @@ module ActiveUseCase
           def add_use_case(use_case, parent_klass, prefix)
             build_method = "build_#{use_case}_use_case".to_sym
             exec_method  = "#{use_case}!".to_sym
-            prefix       = "::#{prefix}" unless prefix.blank?
             self.active_use_cases[exec_method] = UseCase.new(exec_method, parent_klass, prefix)
 
             define_method build_method do

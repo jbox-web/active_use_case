@@ -9,13 +9,13 @@ module ActiveUseCase
     attr_reader :klass_path
 
 
-    def initialize(name, parent_klass, prefix)
+    def initialize(name, parent_klass = nil, prefix = nil)
       @method       = name
       @name         = name.to_s.gsub('!', '')
       @parent_klass = parent_klass
       @prefix       = prefix
       @klass_name   = @name.camelize
-      @klass_path   = "#{@parent_klass}#{@prefix}::#{@klass_name}"
+      @klass_path   = [@parent_klass, @prefix, @klass_name].compact.join('::')
     end
 
 
