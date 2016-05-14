@@ -1,0 +1,9 @@
+en:
+  use_cases:
+    comment:
+      send_email:
+        start: 'Send mail start'
+        success: 'Send mail success'
+        failed: 'Send mail failed'
+        errors:
+          nil_object: 'Send mail object is nil'
