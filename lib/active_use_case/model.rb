@@ -46,7 +46,6 @@ module ActiveUseCase
             define_method exec_method do |*args, &block|
               use_case = send("#{build_method}").to_object(self)
               use_case.call(*args, &block)
-              use_case
             end
           end
 
