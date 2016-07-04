@@ -20,6 +20,8 @@ require 'rspec/rails'
 require 'factory_girl_rails'
 require 'database_cleaner'
 
+ActiveRecord::Migration.maintain_test_schema!
+
 ## Configure RSpec
 RSpec.configure do |config|
   # Include standard helpers
