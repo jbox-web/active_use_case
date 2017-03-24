@@ -2,7 +2,8 @@ language: ruby
 cache: bundler
 sudo: false
 rvm:
-  - 2.3.1
-  - 2.2.5
+  - 2.4.1
+  - 2.3.3
+  - 2.2.6
 after_success:
   - bundle exec codeclimate-test-reporter
