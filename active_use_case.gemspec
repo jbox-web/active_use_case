@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{This gem is designed to provide helpers for ActiveUseCase objects}
   s.license     = 'MIT'
 
-  s.add_dependency 'rails', '>= 4.0', '< 5.1'
+  s.add_dependency 'rails', '>= 4.2'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-rails'
@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry'
 
   s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'appraisal'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
