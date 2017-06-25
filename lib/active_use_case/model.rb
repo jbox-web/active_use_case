@@ -4,11 +4,11 @@ module ActiveUseCase
 
     included do
       class_attribute :active_use_cases
+      self.active_use_cases = {}
 
       class << self
 
         def add_use_cases(use_cases = [], opts = {})
-          self.active_use_cases = {} if self.active_use_cases.nil?
           namespace = opts.delete(:namespace){ nil }
           prefix    = opts.delete(:prefix){ nil }
 
