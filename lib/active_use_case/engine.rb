@@ -15,9 +15,5 @@ module ActiveUseCase
       ActiveUseCase.logger = Rails.logger
     end
 
-    initializer 'active_use_case.set_active_record' do |app|
-      ActiveRecord::Base.send(:include, ActiveUseCase::Model)
-    end
-
   end
 end
