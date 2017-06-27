@@ -26,7 +26,7 @@ You can then call ```success?``` on the UseCase object and a bunch of other meth
 ## Installation
 
 ```ruby
-gem 'active_use_case', '~> 1.1.0', git: 'https://github.com/jbox-web/active_use_case.git', tag: '1.1.0'
+gem 'active_use_case', '~> 1.2.0', git: 'https://github.com/jbox-web/active_use_case.git', tag: '1.2.0'
 ```
 
 then `bundle install`.
@@ -35,7 +35,8 @@ then `bundle install`.
 
 ```ruby
 class Post < ApplicationRecord
-  add_use_cases [:send_email, :send_sms], namespace: self.name.pluralize
+  include ActiveUseCase::Model
+  add_use_cases [:send_email, :send_sms]
 end
 ```
 
