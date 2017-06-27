@@ -9,7 +9,7 @@ module ActiveUseCase
       class << self
 
         def add_use_cases(use_cases = [], opts = {})
-          namespace = opts.delete(:namespace){ nil }
+          namespace = opts.delete(:namespace){ self.name.pluralize }
           prefix    = opts.delete(:prefix){ nil }
 
           use_cases.each do |use_case|
