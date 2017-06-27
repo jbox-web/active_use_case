@@ -23,6 +23,11 @@ module ActiveUseCase
     end
 
 
+    def execute(*, &block)
+      raise NotImplementedError
+    end
+
+
     def to_method
       use_case + '!'
     end
