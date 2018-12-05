@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{This gem is designed to provide helpers for ActiveUseCase objects}
   s.license     = 'MIT'
 
-  s.add_dependency 'rails', '>= 4.2'
+  s.add_dependency 'rails', '>= 5.0'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-rails'
