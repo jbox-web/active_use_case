@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveUseCase
   class Engine < ::Rails::Engine
 
@@ -11,7 +13,7 @@ module ActiveUseCase
       g.helper false
     end
 
-    initializer 'active_use_case.set_logger' do |app|
+    initializer 'active_use_case.set_logger' do
       ActiveUseCase.logger = Rails.logger
     end
 

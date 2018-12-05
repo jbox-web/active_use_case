@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveUseCase
   class UseCaseBuilder
 
@@ -14,7 +16,7 @@ module ActiveUseCase
 
 
     def name
-      @name ||= method.to_s.gsub('!', '')
+      @name ||= method.to_s.delete('!')
     end
 
 
@@ -39,7 +41,8 @@ module ActiveUseCase
 
 
     def to_object(object)
-      raise ActiveUseCase::Errors::UseCaseClassNotFoundError, klass_path if !exists?
+      raise ActiveUseCase::Errors::UseCaseClassNotFoundError, klass_path unless exists?
+
       klass.new(object)
     end
 

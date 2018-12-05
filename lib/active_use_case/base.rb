@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveUseCase
   class Base
 
@@ -19,11 +21,11 @@ module ActiveUseCase
 
     def call(*args, &block)
       execute(*args, &block)
-      return self
+      self
     end
 
 
-    def execute(*, &block)
+    def execute(*)
       raise NotImplementedError
     end
 
@@ -91,8 +93,8 @@ module ActiveUseCase
       end
 
 
-      def log_exception(e)
-        use_case_logger.error e.message
+      def log_exception(error)
+        use_case_logger.error error.message
       end
 
 

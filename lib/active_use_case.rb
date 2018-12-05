@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_use_case/engine'
 require 'active_use_case/base'
 require 'active_use_case/errors'

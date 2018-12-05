@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveUseCase
   module Errors
     class ActiveUseCaseError < StandardError; end

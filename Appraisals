@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RAILS_VERSIONS = %w[
   5.0.7
   5.1.6
