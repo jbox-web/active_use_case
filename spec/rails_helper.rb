@@ -1,10 +1,6 @@
 require 'simplecov'
 
-## Configure SimpleCov
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::HTMLFormatter,
-])
-
+# Start SimpleCov
 SimpleCov.start 'rails' do
   add_filter do |source_file|
     source_file.filename.to_s == File.expand_path('../../lib/active_use_case/version.rb', __FILE__).to_s
