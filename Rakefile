@@ -9,6 +9,7 @@ task default: :spec
 task :console do
   require 'pry'
   require 'active_use_case'
+  puts 'Loaded ActiveUseCase'
   ARGV.clear
   Pry.start
 end
