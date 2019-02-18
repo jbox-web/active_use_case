@@ -25,10 +25,10 @@ module ActiveUseCase
           method = "#{method}!" unless method.end_with?('!')
           method = method.to_sym
 
-          raise ActiveUseCase::Errors::UseCaseNotDefinedError unless active_use_cases[method]
+          raise ActiveUseCase::Error::UseCaseNotDefinedError unless active_use_cases[method]
 
           use_case = active_use_cases[method]
-          raise(ActiveUseCase::Errors::UseCaseClassNotFoundError) unless use_case.exists?
+          raise(ActiveUseCase::Error::UseCaseClassNotFoundError) unless use_case.exists?
 
           use_case
         end

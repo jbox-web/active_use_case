@@ -121,7 +121,7 @@ describe ActiveUseCase::UseCaseBuilder do
     context 'when UseCase klass dont exists' do
       it 'should raise an error' do
         object = Comment.new
-        expect{ subject.to_object(object) }.to raise_error(ActiveUseCase::Errors::UseCaseClassNotFoundError)
+        expect{ subject.to_object(object) }.to raise_error(ActiveUseCase::Error::UseCaseClassNotFoundError)
       end
     end
   end

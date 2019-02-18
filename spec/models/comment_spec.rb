@@ -53,13 +53,13 @@ describe Comment do
   describe '.find_active_use_case' do
     context "when UseCase is not registered" do
       it 'should raise an error' do
-        expect { Comment.find_active_use_case(:foo!) }.to raise_error(ActiveUseCase::Errors::UseCaseNotDefinedError)
+        expect { Comment.find_active_use_case(:foo!) }.to raise_error(ActiveUseCase::Error::UseCaseNotDefinedError)
       end
     end
 
     context "when UseCase klass don't exist" do
       it 'should raise an error' do
-        expect { Comment.find_active_use_case(:resync!) }.to raise_error(ActiveUseCase::Errors::UseCaseClassNotFoundError)
+        expect { Comment.find_active_use_case(:resync!) }.to raise_error(ActiveUseCase::Error::UseCaseClassNotFoundError)
       end
     end
 
@@ -80,13 +80,13 @@ describe Comment do
   describe '#find_active_use_case' do
     context "when UseCase is not registered" do
       it 'should raise an error' do
-        expect { subject.find_active_use_case(:foo!) }.to raise_error(ActiveUseCase::Errors::UseCaseNotDefinedError)
+        expect { subject.find_active_use_case(:foo!) }.to raise_error(ActiveUseCase::Error::UseCaseNotDefinedError)
       end
     end
 
     context "when UseCase klass don't exist" do
       it 'should raise an error' do
-        expect { subject.find_active_use_case(:resync!) }.to raise_error(ActiveUseCase::Errors::UseCaseClassNotFoundError)
+        expect { subject.find_active_use_case(:resync!) }.to raise_error(ActiveUseCase::Error::UseCaseClassNotFoundError)
       end
     end
 
@@ -125,7 +125,7 @@ describe Comment do
       let(:email) { Email.new }
       describe '#resync!' do
         it 'should raise an error on call' do
-          expect { subject.resync!(email) }.to raise_error(ActiveUseCase::Errors::UseCaseClassNotFoundError)
+          expect { subject.resync!(email) }.to raise_error(ActiveUseCase::Error::UseCaseClassNotFoundError)
         end
       end
     end

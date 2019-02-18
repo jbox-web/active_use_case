@@ -41,7 +41,7 @@ module ActiveUseCase
 
 
     def to_object(object)
-      raise ActiveUseCase::Errors::UseCaseClassNotFoundError, klass_path unless exists?
+      raise ActiveUseCase::Error::UseCaseClassNotFoundError, klass_path unless exists?
 
       klass.new(object)
     end
