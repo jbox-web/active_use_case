@@ -121,15 +121,3 @@ puts task.message_on_errors?
 puts task.message_on_start?
 puts task.errors (=> ['Error while doing something!'])
 ```
-
-## Contributors
-
-A big thank to [them](https://github.com/jbox-web/active_use_case/blob/master/AUTHORS) for their contribution!
-
-## Contribute
-
-You can contribute to this plugin in many ways such as :
-* Helping with documentation
-* Contributing code (features or bugfixes)
-* Reporting a bug
-* Submitting translations
