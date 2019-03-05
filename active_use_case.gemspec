@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = 'This gem is designed to provide helpers for ActiveUseCase objects'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 2.4.0'
+  s.required_ruby_version = '>= 2.4.4'
 
   s.files = `git ls-files`.split("\n")
 
