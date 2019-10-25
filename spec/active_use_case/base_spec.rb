@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ActiveUseCase::Base do
+RSpec.describe ActiveUseCase::Base do
 
   def build_use_case_object
     build(:comment).send_email!(Email.new)

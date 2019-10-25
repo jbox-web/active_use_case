@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ActiveUseCase::UseCaseBuilder do
+RSpec.describe ActiveUseCase::UseCaseBuilder do
 
   def build_use_case(name = :resync!, namespace = nil, prefix = nil)
     ActiveUseCase::UseCaseBuilder.new(name, namespace, prefix)

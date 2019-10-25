@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Comment do
+RSpec.describe Comment do
   subject { build(:comment) }
 
   ## Global validation
