@@ -5,7 +5,7 @@ AllCops:
     - gemfiles/*
     - spec/**/*
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
 Layout/EmptyLines:
@@ -24,10 +24,25 @@ Layout/EmptyLineBetweenDefs:
   Enabled: false
 
 Layout/IndentationConsistency:
-  EnforcedStyle: rails
+  EnforcedStyle: indented_internal_methods
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
 
 Metrics/BlockLength:
   Max: 35
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
