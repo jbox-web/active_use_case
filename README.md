@@ -27,7 +27,7 @@ Put this in your `Gemfile` :
 ```ruby
 git_source(:github){ |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'active_use_case', github: 'jbox-web/active_use_case', tag: '1.3.0'
+gem 'active_use_case', github: 'jbox-web/active_use_case', tag: '1.4.0'
 ```
 
 then run `bundle install`.
