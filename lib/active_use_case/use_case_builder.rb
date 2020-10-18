@@ -3,9 +3,7 @@
 module ActiveUseCase
   class UseCaseBuilder
 
-    attr_reader :method
-    attr_reader :namespace
-    attr_reader :prefix
+    attr_reader :method, :namespace, :prefix
 
 
     def initialize(method, namespace = nil, prefix = nil)

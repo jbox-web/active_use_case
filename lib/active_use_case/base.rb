@@ -3,8 +3,7 @@
 module ActiveUseCase
   class Base
 
-    attr_reader :object
-    attr_reader :use_case
+    attr_reader :object, :use_case
 
 
     def initialize(object)
@@ -31,7 +30,7 @@ module ActiveUseCase
 
 
     def to_method
-      use_case + '!'
+      "#{use_case}!"
     end
 
 
