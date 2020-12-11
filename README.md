@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/jbox-web/active_use_case.svg)](https://github.com/jbox-web/active_use_case/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/jbox-web/active_use_case.svg)](https://github.com/jbox-web/active_use_case/releases/latest)
-[![Build Status](https://travis-ci.com/jbox-web/active_use_case.svg?branch=master)](https://travis-ci.com/jbox-web/active_use_case)
+[![CI](https://github.com/jbox-web/active_use_case/workflows/CI/badge.svg)](https://github.com/jbox-web/active_use_case/actions)
 [![Code Climate](https://codeclimate.com/github/jbox-web/active_use_case/badges/gpa.svg)](https://codeclimate.com/github/jbox-web/active_use_case)
 [![Test Coverage](https://codeclimate.com/github/jbox-web/active_use_case/badges/coverage.svg)](https://codeclimate.com/github/jbox-web/active_use_case/coverage)
 
