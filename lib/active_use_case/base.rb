@@ -73,7 +73,7 @@ module ActiveUseCase
 
 
       def t(str, opts = {})
-        I18n.t("#{i18n_prefix}.#{str}", opts)
+        I18n.t("#{i18n_prefix}.#{str}", **opts)
       end
 
 
